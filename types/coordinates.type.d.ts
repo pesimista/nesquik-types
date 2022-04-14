@@ -1,4 +1,4 @@
-export type Coordinates = {
+export declare type Coordinates = {
   lat: number
   lng: number
   accuracy?: number

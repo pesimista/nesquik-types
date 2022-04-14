@@ -1,8 +1,7 @@
 import { Banner } from './banner.type'
 import { Category, CategoryObject } from './categories.type'
 import { Coordinates } from './coordinates.type'
-
-export type Schedule = {
+export declare type Schedule = {
   initialTime: string
   onlyAllowMoto: boolean
   statusInRange: string
@@ -13,8 +12,7 @@ export type Schedule = {
   initialDeliveryTime: string
   deliveryFactor: number
 }
-
-export type MarketImages = {
+export declare type MarketImages = {
   profile: string
   header: string
   showcaseBackgroundImage: string
@@ -22,8 +20,7 @@ export type MarketImages = {
   marketing: string[]
   headerBackgroundColor: string
 }
-
-export type Market = {
+export declare type Market = {
   address: string
   addressID: string
   addressName: string

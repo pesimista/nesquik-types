@@ -1,10 +1,8 @@
 import { Coordinates } from './coordinates.type'
-
-export type HomeBanners = {
+export declare type HomeBanners = {
   [key: string]: Banner[]
 }
-
-export type Banner = {
+export declare type Banner = {
   bannerID: string
   image: string
   largeImage?: string
@@ -31,8 +29,8 @@ export type Banner = {
   exclusiveFor: 'mobile' | 'desktop' | 'both'
   gallery?: []
 }
-
-type BannerQueryParams = {
+declare type BannerQueryParams = {
   storeid: string
   productID: string
 }
+export {}

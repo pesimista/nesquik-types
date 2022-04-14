@@ -1,17 +1,15 @@
-export type CategoryObject<T> = {
+export declare type CategoryObject<T> = {
   ids: string[]
   categoriesDescriptions: T[]
 }
-
-export type Category = {
+export declare type Category = {
   categoryID: string
   parent: string
   image?: string
   name: string
   affiliateID: string
 }
-
-export type MarketCategory = {
+export declare type MarketCategory = {
   marketID: string
   order: number
   name: string
