@@ -4,9 +4,6 @@
   "description": "common typing for the nesquik project",
   "main": "index.js",
   "types": "index.d.ts",
-  "files": [
-    "/dist"
-  ],
   "scripts": {
     "lint": "prettier --write .",
     "build": "rm -rf dist && tsc",
