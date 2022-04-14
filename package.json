@@ -2,8 +2,8 @@
   "name": "nesquik-types",
   "version": "1.0.0",
   "description": "common typing for the nesquik project",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "files": [
     "/dist"
   ],
