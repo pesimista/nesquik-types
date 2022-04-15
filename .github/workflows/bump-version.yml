@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - master
+
+env:
+  REMOTE_DIST: ${{ github.event.repository.ssh_url }}
+
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -17,6 +21,9 @@ jobs:
     steps:
       - name: checkout repo
         uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SSH }}
+          ssh-known-hosts: ${{ secrets.KNOWN_HOSTS }}
 
       - name: 'Use Node.js ${{ matrix.node-version }}'
         uses: actions/setup-node@v3
@@ -33,10 +40,20 @@ jobs:
       - name: install dependencies
         run: npm ci
 
-      - name: update contents
+      - name: bump packaje.json version
         run: |
-          git config --global user.email ${{github.event.pusher.email}}
-          git config --global user.name ${{github.event.pusher.name}}
-          npm version --no-git-tag-version --no-commit-hooks patch -m "update to v%s [skip ci]"
-          git push --no-verify git@github.com:MezzMar/nesquik-types.git master
+          git config --global user.email ${{ github.event.pusher.email }}
+          git config --global user.name ${{ github.event.pusher.name }}
+          npm version patch -no-git-tag-version
+          echo "PUBLISH_VERSION=$(cat ./package.json | grep -m 1 version | sed 's/[^0-9.]//g')" >> $GITHUB_ENV
+
+      - name: push to master
+        run: |
+          git commit -a -m "update to v${{ env.PUBLISH_VERSION }} [skip ci]"
+          git push $REMOTE_DIST --no-verify master
+          echo "v${{ env.PUBLISH_VERSION }}"
+
+        # echo "FOO=${FOO}" >> $GITHUB_ENV
+      - name: update contents in dist
+        run: |
           sh ./scripts/publish.sh

@@ -1,8 +1,3 @@
-REMOTE_DIST=git@github.com:MezzMar/nesquik-types.git
-
-# Updating the package version for the library
-PUBLISH_VERSION=$(cat ./package.json | grep -m 1 version | sed 's/[^0-9.]//g')
-
 echo "Publish version of package.json ==> "$PUBLISH_VERSION
 git checkout -b "updateLib"
 git subtree add --prefix=dist $REMOTE_DIST dist

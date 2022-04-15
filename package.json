@@ -1,6 +1,6 @@
 {
   "name": "nesquik-types",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "common typing for the nesquik project",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,10 +8,15 @@
     "lint": "prettier --write .",
     "build": "rm -rf dist && tsc",
     "build:w": "tsc",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "postversion": "git push && rm -rf build/temp"
   },
   "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:MezzMar/nesquik-types.git"
+  },
+  "author": "Gary Nadir <nadirgary@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^27.4.1",
