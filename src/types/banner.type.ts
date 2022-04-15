@@ -1,9 +1,5 @@
 import { Coordinates } from './coordinates.type'
 
-export type HomeBanners = {
-  [key: string]: Banner[]
-}
-
 export type Banner = {
   bannerID: string
   image: string

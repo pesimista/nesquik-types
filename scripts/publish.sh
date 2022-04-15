@@ -1,12 +1,7 @@
 REMOTE_DIST=git@github.com:MezzMar/nesquik-types.git
 
 # Updating the package version for the library
-PUBLISH_VERSION=$(cat ./package.json |
-  grep version |
-  head -1 |
-  awk -F: '{ print $2 }' |
-  sed 's/[",]git s//g' |
-  tr -d '[[:space:]]')
+PUBLISH_VERSION=$(cat ./package.json | grep -m 1 version | sed 's/[^0-9.]//g')
 
 echo "Publish version of package.json ==> "$PUBLISH_VERSION
 git checkout -b "updateLib"
