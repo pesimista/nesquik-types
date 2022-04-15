@@ -10,7 +10,6 @@ export declare type Product = {
     price: number;
     rating?: number;
     mainMarket: string;
-    marketID?: string[];
     productCategory?: CategoryObject<Category>;
     marketCategories: CategoryObject<MarketCategory>;
     isSubproduct: boolean;

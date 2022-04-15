@@ -1,7 +1,4 @@
 import { Coordinates } from './coordinates.type';
-export declare type HomeBanners = {
-    [key: string]: Banner[];
-};
 export declare type Banner = {
     bannerID: string;
     image: string;
