@@ -11,7 +11,7 @@
     "prepare": "husky install",
     "postversion": "git push && rm -rf build/temp"
   },
-  "keywords": [],
+  "keywords": ["nesquik"],
   "repository": {
     "type": "git",
     "url": "git@github.com:MezzMar/nesquik-types.git"
