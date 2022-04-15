@@ -1,0 +1,42 @@
+name: update dist and create tag
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        node-version:
+          - 14.x
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+
+      - name: 'Use Node.js ${{ matrix.node-version }}'
+        uses: actions/setup-node@v3
+        with:
+          node-version: '${{ matrix.node-version }}'
+          cache: npm
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH }}
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+
+      - name: install dependencies
+        run: npm ci
+
+      - name: update contents
+        run: |
+          git config --global user.email ${{github.event.pusher.email}}
+          git config --global user.name ${{github.event.pusher.name}}
+          npm version --no-commit-hooks patch -m "update to v%s [skip ci]"
+          git push --no-verify git@github.com:MezzMar/nesquik-types.git master
+          sh ./scripts/publish.sh
