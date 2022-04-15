@@ -1,6 +1,6 @@
 {
   "name": "nesquik-types",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "common typing for the nesquik project",
   "main": "index.js",
   "types": "index.d.ts",
@@ -11,7 +11,9 @@
     "prepare": "husky install",
     "postversion": "git push && rm -rf build/temp"
   },
-  "keywords": [],
+  "keywords": [
+    "nesquik"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:MezzMar/nesquik-types.git"

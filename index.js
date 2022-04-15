@@ -18,5 +18,6 @@ __exportStar(require("./types/banner.type"), exports);
 __exportStar(require("./types/categories.type"), exports);
 __exportStar(require("./types/coordinates.type"), exports);
 __exportStar(require("./types/market.type"), exports);
-__exportStar(require("./types/product.interface"), exports);
+__exportStar(require("./types/product.type"), exports);
+__exportStar(require("./types/user.type"), exports);
 //# sourceMappingURL=index.js.map
