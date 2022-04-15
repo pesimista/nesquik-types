@@ -32,11 +32,13 @@ jobs:
 
       - name: install dependencies
         run: npm ci
-
-      - name: update contents
+        
+      - name: bump packaje.json version
         run: |
           git config --global user.email ${{github.event.pusher.email}}
           git config --global user.name ${{github.event.pusher.name}}
           npm version --no-git-tag-version --no-commit-hooks patch -m "update to v%s [skip ci]"
           git push --no-verify git@github.com:MezzMar/nesquik-types.git master
-          sh ./scripts/publish.sh
+
+      - name: update contents in dist
+        run: sh ./scripts/publish.sh
