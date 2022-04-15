@@ -1,0 +1,1 @@
+{"version":3,"file":"user.type.js","sourceRoot":"/","sources":["types/user.type.ts"],"names":[],"mappings":"","sourcesContent":["export type User = {\n  name: string\n}\n"]}
