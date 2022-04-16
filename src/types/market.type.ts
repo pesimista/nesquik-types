@@ -1,5 +1,5 @@
 import { Banner } from './banner.type'
-import { Category, CategoryObject } from './categories.type'
+import { Category } from './categories.type'
 import { Coordinates } from './coordinates.type'
 
 export type Schedule = {
@@ -48,5 +48,5 @@ export type Market = {
   rating: number
   schedule: Schedule[]
   status: string
-  categories: CategoryObject<Category>
+  categories: Category[]
 }
