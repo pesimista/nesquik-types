@@ -7,7 +7,9 @@ export declare type Category = {
     parent: string;
     image?: string;
     name: string;
-    affiliateID: string;
+    order?: string;
+    shape?: string;
+    banner?: string;
 };
 export declare type MarketCategory = {
     marketID: string;
