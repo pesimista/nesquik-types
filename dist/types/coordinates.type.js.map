@@ -1,0 +1,1 @@
+{"version":3,"file":"coordinates.type.js","sourceRoot":"/","sources":["types/coordinates.type.ts"],"names":[],"mappings":"","sourcesContent":["export type Coordinates = {\n  lat: number\n  lng: number\n  accuracy?: number\n}\n"]}
