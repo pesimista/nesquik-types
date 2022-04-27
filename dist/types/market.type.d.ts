@@ -4,14 +4,7 @@ import { Coordinates } from './coordinates.type';
 import { Model } from './model.type';
 export declare type Schedule = {
     initialTime: string;
-    onlyAllowMoto: boolean;
-    statusInRange: string;
     finalTime: string;
-    finalDeliveryTime: number;
-    allowFree: boolean;
-    statusOutOfRange: string;
-    initialDeliveryTime: string;
-    deliveryFactor: number;
 };
 export declare type MarketImages = {
     profile: string;
@@ -37,14 +30,14 @@ export declare type Market = Model & {
     isPremium: boolean;
     logo: string;
     marketID: string;
-    marketing: Banner[];
+    marketing: Partial<Banner>[];
     marketRanking: number;
     maxDeliveryRange: number;
     name: string;
     radiusDistance: number;
     ranking: number;
     rating: number;
-    schedule: Schedule[];
+    schedule: Partial<Schedule>[];
     status: string;
     categories: Category[];
 };
