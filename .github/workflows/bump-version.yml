@@ -51,6 +51,7 @@ jobs:
 
       - name: push to master
         run: |
+          git add .
           git commit -a -m "update to v${{ env.PUBLISH_VERSION }} [skip ci]"
           git push $REMOTE_DIST --no-verify master
           echo "v${{ env.PUBLISH_VERSION }}"
