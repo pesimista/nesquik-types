@@ -2,8 +2,11 @@
   "name": "nesquik-types",
   "version": "1.0.11",
   "description": "common typing for the nesquik project",
-  "main": "index.js",
-  "types": "index.d.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "lint": "prettier --write .",
     "build": "rm -rf dist && tsc",

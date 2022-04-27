@@ -1,6 +1,7 @@
 import { Category, CategoryObject, MarketCategory } from './categories.type'
+import { Model } from './model.type'
 
-export type Product = {
+export type Product = Model & {
   isOrder: boolean
   tags?: string[]
 

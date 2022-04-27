@@ -1,6 +1,7 @@
 import { Coordinates } from './coordinates.type'
+import { Model } from './model.type'
 
-export type Banner = {
+export type Banner = Model & {
   bannerID: string
   image: string
   largeImage?: string

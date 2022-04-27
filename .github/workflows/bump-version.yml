@@ -40,12 +40,14 @@ jobs:
       - name: install dependencies
         run: npm ci
 
-      - name: bump packaje.json version
+      - name: bump packaje.json version and update dist
         run: |
           git config --global user.email ${{ github.event.pusher.email }}
           git config --global user.name ${{ github.event.pusher.name }}
           npm version patch -no-git-tag-version
           echo "PUBLISH_VERSION=$(cat ./package.json | grep -m 1 version | sed 's/[^0-9.]//g')" >> $GITHUB_ENV
+          rm -rf ./dist
+          npm run build
 
       - name: push to master
         run: |
@@ -54,6 +56,8 @@ jobs:
           echo "v${{ env.PUBLISH_VERSION }}"
 
         # echo "FOO=${FOO}" >> $GITHUB_ENV
-      - name: update contents in dist
+      - name: add tag
         run: |
-          sh ./scripts/publish.sh
+          git tag -a "v$PUBLISH_VERSION" -m ""
+          git push $REMOTE_DIST "v$PUBLISH_VERSION"
+          echo "- Done."

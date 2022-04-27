@@ -1,9 +1,11 @@
+import { Model } from './model.type'
+
 export type CategoryObject<T> = {
   ids: string[]
   categoriesDescriptions: T[]
 }
 
-export type Category = {
+export type Category = Model & {
   categoryID: string
   parent: string
   image?: string
@@ -14,7 +16,7 @@ export type Category = {
   banner?: string
 }
 
-export type MarketCategory = {
+export type MarketCategory = Model & {
   marketID: string
   order: number
   name: string

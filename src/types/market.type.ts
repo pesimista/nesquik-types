@@ -1,6 +1,7 @@
 import { Banner } from './banner.type'
 import { Category } from './categories.type'
 import { Coordinates } from './coordinates.type'
+import { Model } from './model.type'
 
 export type Schedule = {
   initialTime: string
@@ -23,7 +24,7 @@ export type MarketImages = {
   headerBackgroundColor: string
 }
 
-export type Market = {
+export type Market = Model & {
   address: string
   addressID: string
   addressName: string
