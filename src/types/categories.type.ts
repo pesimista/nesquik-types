@@ -1,3 +1,4 @@
+import { Market } from './market.type'
 import { Model } from './model.type'
 
 export type CategoryObject<T> = {
@@ -6,25 +7,12 @@ export type CategoryObject<T> = {
 }
 
 export type Category = Model & {
-  categoryID: string
-  parent: string
-  image?: string
-  name: string
-
-  order?: string
-  shape?: string
-  banner?: string
-}
-
-export type MarketCategory = Model & {
-  marketID: string
-  order: number
-  name: string
+  market: string | Market
   categoryID: string
   image: string
-  schedule: string[]
-  affiliateID: string
-  banner?: string
-  shape?: string
-  parent?: string
+  name: string
+  order: number
+  shape: string
+  banner: string
+  parent: string
 }

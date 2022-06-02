@@ -1,43 +1,43 @@
-import { Category, CategoryObject, MarketCategory } from './categories.type'
+import { Category } from './categories.type'
+import { Market } from './market.type'
 import { Model } from './model.type'
 
 export type Product = Model & {
-  isOrder: boolean
+  isSubproduct: boolean
+  stock: number
+  rating: number
+  market: string | Market
+  isExclusive: boolean
   tags?: string[]
-
   description: string
   shortDescription: string
-
-  stock: number
-  inStock: boolean
-
-  name: string
-  price: number
-  rating?: number
-  mainMarket: string
-
-  productCategory?: CategoryObject<Category>
-  marketCategories: CategoryObject<MarketCategory>
-
-  isSubproduct: boolean
-
-  magnitude?: number
-  measure?: string
-
-  deliveryType: number
-  hasFreeDelivery: boolean
-  isOnlyDelivery: boolean
-
-  unitsSold: number
-  createdAt: Date
-
-  promoValue: number
-
-  isAvailable: boolean
   pictures: string
-
-  promo: number
-  productID: string
-  isExclusive: boolean
+  isAvailable: boolean
   priority: number
+  magnitude: number
+  measure: string
+  name: string
+  productID: string
+  price: number
+  promoValue: number
+  categories: Category[] | string[]
+  isPromo: boolean
+  options: ProductOption[]
+}
+
+export type ProductOption = {
+  type: string
+  label: string
+  iterable: boolean
+  min: number
+  max: number
+  usesPrice: boolean
+  required: boolean
+  elements: Product[] | string[]
+  selected: OptionValues[]
+}
+
+export type OptionValues = {
+  optionID: string
+  values: number
 }
