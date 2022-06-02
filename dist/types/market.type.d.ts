@@ -15,8 +15,8 @@ export declare type MarketImages = {
     headerBackgroundColor: string;
 };
 export declare type Market = Model & {
+    name: string;
     address: string;
-    addressID: string;
     addressName: string;
     bikeDistance: number;
     coordinates: Coordinates;
@@ -24,20 +24,15 @@ export declare type Market = Model & {
     estimatedTime: number;
     hasFreeDelivery: boolean;
     hasPromo: boolean;
-    images: MarketImages;
-    isDeliveryOnly: boolean;
     isOnlyQuik: boolean;
-    isPremium: boolean;
     logo: string;
     marketID: string;
-    marketing: Partial<Banner>[];
-    marketRanking: number;
     maxDeliveryRange: number;
-    name: string;
     radiusDistance: number;
-    ranking: number;
+    order: number;
     rating: number;
     schedule: Partial<Schedule>[];
-    status: string;
-    categories: Category[];
+    marketing: Banner[];
+    images: MarketImages;
+    categories: Category[] | string[];
 };

@@ -1,1 +1,1 @@
-{"version":3,"file":"model.type.js","sourceRoot":"/","sources":["types/model.type.ts"],"names":[],"mappings":"","sourcesContent":["export type Model = {\n  id?: string\n  createdAt?: Date\n  updatedAt?: Date\n}\n"]}
+{"version":3,"file":"model.type.js","sourceRoot":"/","sources":["types/model.type.ts"],"names":[],"mappings":"","sourcesContent":["export type Model = {\n  id?: string\n  _id?: string\n  createdAt?: Date\n  updatedAt?: Date\n}\n"]}
