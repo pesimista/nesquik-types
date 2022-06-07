@@ -38,6 +38,6 @@ export type ProductOption = {
 }
 
 export type OptionValues = {
-  optionID: string
+  elementID: string | Product
   values: number
 }
