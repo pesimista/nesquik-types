@@ -23,6 +23,7 @@ export type Product = Model & {
   categories: Category[] | string[]
   isPromo: boolean
   options: ProductOption[]
+  quantity?: number
 }
 
 export type ProductOption = {
@@ -39,5 +40,5 @@ export type ProductOption = {
 
 export type OptionValues = {
   elementID: string | Product
-  values: number
+  quantity: number
 }
