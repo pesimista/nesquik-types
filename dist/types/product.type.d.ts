@@ -35,6 +35,6 @@ export declare type ProductOption = {
     selected: OptionValues[];
 };
 export declare type OptionValues = {
-    optionID: string;
+    elementID: string | Product;
     values: number;
 };

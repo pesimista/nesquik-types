@@ -1,6 +1,6 @@
 {
   "name": "nesquik-types",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "common typing for the nesquik project",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
