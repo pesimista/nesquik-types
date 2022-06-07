@@ -22,6 +22,7 @@ export declare type Product = Model & {
     categories: Category[] | string[];
     isPromo: boolean;
     options: ProductOption[];
+    quantity?: number;
 };
 export declare type ProductOption = {
     type: string;
@@ -36,5 +37,5 @@ export declare type ProductOption = {
 };
 export declare type OptionValues = {
     elementID: string | Product;
-    values: number;
+    quantity: number;
 };
